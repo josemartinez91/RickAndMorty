@@ -17,6 +17,7 @@ body{
 .image-container img {
   width: 100%;
   height: 300px;
+  object-fit: none;
 }
 
 .App li{
