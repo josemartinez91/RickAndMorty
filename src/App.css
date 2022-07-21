@@ -1,33 +1,39 @@
-*{
+* {
   box-sizing: border-box;
 }
-body{
+
+body {
   background-color: #05292e;
   color: white;
   font-family: 'Poppins', sans-serif;
 }
+
 .App {
   text-align: center;
-  
+
 }
-.image-container h1{
+
+.image-container h1 {
   font-size: 2rem;
-  
+
 }
+
 .image-container img {
   width: 100%;
   height: 300px;
   object-fit: none;
 }
 
-.App li{
+.App li {
   list-style: none;
 }
+
 .App input {
   width: 20rem;
   margin-right: 1rem;
 }
-.App button{
+
+.header-button {
   width: 10rem;
   background: #062226;
   color: white;
@@ -37,30 +43,37 @@ body{
   font-size: inherit;
   margin-bottom: 4rem;
 }
-.card-container li span{
-  margin: 4rem;  
+
+.card-container li span {
+  margin: 4rem;
 }
-.card-container{
+
+.card-container {
   margin-bottom: 5rem;
 }
-.card-name{
+
+.card-name {
   font-size: 1.5rem;
   padding-bottom: 1rem;
   color: white;
 }
-.resident-container{
+
+.resident-container {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
-.App li div b{
+
+.App li div b {
   color: grey;
 }
-.resident-container-info{
+
+.resident-container-info {
   width: 33.33%;
 
 }
-.resident-info{
+
+.resident-info {
   width: 65%;
   display: flex;
   flex-direction: column;
@@ -71,10 +84,19 @@ body{
   padding-top: 1rem;
   margin-bottom: 2rem;
 }
-.resident-info img{
+
+.resident-info img {
   width: 15rem;
 }
 
-
-
-
+.button-page {
+  margin: 0 0.5rem;
+  width: 2rem;
+  border-radius: 1rem;
+  background: #062226;
+  color: white;
+  border: none;
+}
+.div-search{
+  cursor: pointer;
+}

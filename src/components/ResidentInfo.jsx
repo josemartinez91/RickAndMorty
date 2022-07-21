@@ -11,7 +11,7 @@ const ResidentInfo = ({ character }) => {
             .then(res => setCharacterInfo(res.data))
     }, [])
 
-    console.log(characterInfo)
+    // console.log(characterInfo)
     const aliveStyle = {
         color: 'green'
     }
