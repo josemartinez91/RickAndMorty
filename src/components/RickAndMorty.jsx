@@ -23,21 +23,21 @@ const RickAndMorty = () => {
             .then(res => setCharaters(res.data))
     }
 
-    useEffect(()=>{
-        if(textIndex !== ""){
+    useEffect(() => {
+        if (textIndex !== "") {
             axios.get(`https://rickandmortyapi.com/api/location/?name=${textIndex}`)
-            .then(res=>setSearchResults(res.data.results))
-        }else{
+                .then(res => setSearchResults(res.data.results))
+        } else {
             setSearchResults([])
         }
-        
-    },[textIndex])
+
+    }, [textIndex])
 
     const [page, setPage] = useState(1)
-    const lastIndex = page * 5
-    const firstIndex = lastIndex - 5
-    const charactersPagination = characters.residents?.splice(firstIndex, lastIndex)
-    const lastPage = Math.ceil(characters.residents?.length / 10)
+    const lastIndex = page * 20
+    const firstIndex = lastIndex - 20
+    const charactersPagination = characters.residents?.slice(firstIndex, lastIndex)
+    const lastPage = Math.ceil(characters.residents?.length / 20)
     console.log(lastPage)
 
     const numbers = [];
@@ -45,24 +45,57 @@ const RickAndMorty = () => {
         numbers.push(i)
 
     }
+    const clickSearch = (location) => {
+        setCharaters(location)
+        setSearchResults([])
+        setTextIndex("")
+    }
 
     return (
         <div>
-            <section className='image-container'>
+            <section className='image-container image-container-xs'>
                 <h1>Rick and Morty Wiki</h1>
-                <img src={image} alt="" />
+                <img className='image-xs' src={image} alt="" />
             </section>
 
-            <input type="text" value={textIndex} onChange={e => setTextIndex(e.target.value)} placeholder="Type a location" />
-            <button className='header-button' onClick={toggleLocation}>Search location</button><br />
-            {searchResults.map(location=>(
-                <div className='div-search' key={location.id} onClick={()=>setCharaters(location)}>{location.name}</div>
+            <div className='col-xs search-input'>
+                 <input
+                 className='col-xs-6'
+                type="text"
+                value={textIndex}
+                onChange={e => setTextIndex(e.target.value)}
+                placeholder="Type a location" />
+            </div>
+           
+
+            {searchResults.map(location => (
+                <div
+                    className='div-search'
+                    key={location.id}
+                    onClick={() => { clickSearch(location) }}>
+                    {location.name}
+                </div>
             ))}
-            <button
-                onClick={() => setPage(page - 1)}
-                disabled={page === 1}
-                className='header-button'
-            >Prev-Page </button>
+            <div className='col-xs xs-button-container'>
+                <div className='col-xs-6'>
+                    <button
+                        onClick={() => setPage(page - 1)}
+                        disabled={page === 1}
+                        className='header-button button-xs-header'
+                    >Prev-Page </button>
+                </div>
+
+                <div className='col-xs-6'>
+                    <button
+                        onClick={() => setPage(page + 1)}
+                        disabled={page === lastPage}
+                        className='header-button button-xs-header'
+                    >Next Page</button>
+                </div>
+
+            </div>
+
+
             {numbers.map(number => (
                 <button
                     className='button-page'
@@ -72,20 +105,23 @@ const RickAndMorty = () => {
                     {number}
                 </button>
             ))}
-            <button
-                onClick={() => setPage(page + 1)}
-                disabled={page === lastPage}
-                className='header-button'
-            >Next Page</button>
-            <h2>{characters.name}</h2>
-            <ul className='card-container'>
-                <li>
-                    <span><b>type:</b> {characters.type} </span>
-                    <span><b> dimension:</b> {characters.dimension}</span>
-                    <span><b> population:</b> {characters.residents?.length}</span>
-                </li>
-            </ul>
-            <ul className='resident-container'>
+
+            <div className='col-xs container-info'>
+                <div className='container-info-li'>
+                    <h2>{characters.name}</h2>
+                </div>
+                <div className='container-info-li'>
+                    <ul className='card-container col-xs '>
+                        <li className='ul-header'>
+                            <span><b>type:</b> {characters.type} </span>
+                            <span><b> dimension:</b> {characters.dimension}</span>
+                            <span><b> population:</b> {characters.residents?.length}</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <ul className='resident-container container-info ul-principal col-xs'>
                 {charactersPagination?.map(character => (
                     <ResidentInfo character={character} key={character} />
 

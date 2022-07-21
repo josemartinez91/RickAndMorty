@@ -28,10 +28,10 @@ body {
   list-style: none;
 }
 
-.App input {
+/* .App input {
   width: 20rem;
   margin-right: 1rem;
-}
+} */
 
 .header-button {
   width: 10rem;
@@ -44,9 +44,9 @@ body {
   margin-bottom: 4rem;
 }
 
-.card-container li span {
+/* .card-container li span {
   margin: 4rem;
-}
+} */
 
 .card-container {
   margin-bottom: 5rem;
@@ -96,6 +96,7 @@ body {
   background: #062226;
   color: white;
   border: none;
+  cursor: pointer;
 }
 .div-search{
   cursor: pointer;
