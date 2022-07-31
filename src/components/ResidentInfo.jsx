@@ -28,8 +28,8 @@ const ResidentInfo = ({ character }) => {
     }
 
     return (
-        <li className='resident-container-info col-xs container-info'>
-            <div className='resident-info col-xs'>
+        <li className='resident-container-info col-xs container-info card-container-md card-item-xl'>
+            <div className='resident-info col-xs card-item-md'>
                 <img src={characterInfo.image} alt="" />
                 <b ></b><span className='card-name'>{characterInfo?.name}</span>  <br />
                 <>{statusCharacter()}</>

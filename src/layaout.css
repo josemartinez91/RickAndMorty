@@ -1,57 +1,125 @@
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
 
 
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
 
 
-
-
-@media (min-width: 0px) { 
-    .col-xs{
+@media (min-width: 0px) {
+    .col-xs {
         width: 100%;
         display: flex;
     }
-    .col-xs-6{
+
+    .col-xs-6 {
         width: 50%;
     }
-    .xs-button-container{
+
+    .xs-button-container {
         margin-top: 1rem;
     }
-    .image-container-xs{
+
+    .image-container-xs {
         width: 100%;
     }
-    .image-container-xs img{
+
+    .image-container-xs img {
         object-fit: contain;
     }
-    .search-input{
+
+    .search-input {
         display: flex;
         justify-content: center;
     }
-    .ul-header{
+
+    .ul-header {
         display: flex;
         flex-direction: column;
     }
-    .container-info{
+
+    .container-info {
         flex-direction: column;
         align-items: center;
     }
-    .container-info-li{
+
+    .container-info-li {
         display: flex;
         flex-direction: column;
     }
-    .ul-principal{
+
+    .ul-principal {
         margin: 0;
         padding: 0;
     }
-    
- }
+
+}
+
+@media (min-width: 768px) {
+
+    .card-ul-md{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .card-container-md {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .card-item-md{
+        width: 90%;
+    }
+
+}
+
+@media (min-width: 992px){
+    .card-item-xl{
+        width: 33.33%;
+    }
+}

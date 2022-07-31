@@ -121,7 +121,7 @@ const RickAndMorty = () => {
                 </div>
 
             </div>
-            <ul className='resident-container container-info ul-principal col-xs'>
+            <ul className='resident-container container-info ul-principal col-xs card-ul-md'>
                 {charactersPagination?.map(character => (
                     <ResidentInfo character={character} key={character} />
 
